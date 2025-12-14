@@ -7,12 +7,12 @@ export interface Product {
   id: string;
   name: string;
   category: string;
-  cost: number;          // Was costPrice
+  costPrice: number;
   transportCost: number;
   totalCost: number;
   marginType: MarginType;
   marginValue: number;
-  price: number;         // Was sellingPrice
+  sellingPrice: number;
   stock: number;
 }
 
@@ -29,24 +29,24 @@ export interface BillItem {
   productId: string;
   name: string;
   quantity: number;
-  cost: number;          // Was costPrice
-  price: number;         // Was sellingPrice
+  costPrice: number;
+  sellingPrice: number;
   profit: number;
   warranty: boolean;
 }
 
 export interface Bill {
   id: string;
-  invoiceNumber: string; // Was number
+  number: string;
   date: string; // ISO string
   customerId: string | null;
   customerName: string;
   items: BillItem[];
-  subtotal: number;      // Was totalAmount
+  totalAmount: number;
   totalCost: number;
   totalProfit: number;
   discount: number;
-  total: number;         // Was finalAmount
+  finalAmount: number;
   paymentType: 'CASH' | 'LOAN';
 }
 
